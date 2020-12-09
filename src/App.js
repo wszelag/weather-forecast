@@ -3,7 +3,7 @@ import { Form } from "./components/Form/Form";
 import { InfoWrapper } from "./components/InfoWrapper/InfoWrapper";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./style/theme";
-import { GlobalStyle } from "./style/GlobalStyle";
+import { GlobalStyle, Wrapper } from "./style/GlobalStyle";
 
 export const App = () => {
   const [cityData, setCityData] = useState({ empty: true });
@@ -11,8 +11,10 @@ export const App = () => {
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Form setCityData={setCityData} />
-        <InfoWrapper cityData={cityData} />
+        <Wrapper>
+          <Form setCityData={setCityData} />
+          <InfoWrapper cityData={cityData} />
+        </Wrapper>
       </ThemeProvider>
     </>
   );
