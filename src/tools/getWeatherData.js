@@ -1,6 +1,8 @@
 import { APIkey } from "../config/APIconfig";
 
-export const getWeatherData = (cityName) => {
+//fetching data and updating state
+
+export const getWeatherData = (cityName, setCityData) => {
   const cityData = {};
   const baseInfoURL = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${APIkey}`;
 
@@ -21,7 +23,8 @@ export const getWeatherData = (cityName) => {
           cityData.current = data.current;
           cityData.daily = data.daily;
           cityData.hourly = data.hourly;
-          console.log("end");
+          console.log(cityName);
+          setCityData(() => cityData);
         });
     });
 

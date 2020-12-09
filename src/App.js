@@ -1,16 +1,19 @@
-import React from "react";
-import { getWeatherData } from "./tools/getWeatherData";
+import React, { useState } from "react";
+import { Form } from "./components/Form/Form";
+import { Info } from "./components/Info/Info";
+
+//todo
+//add form and first views
+//decode time
+//display data hourly & daily with charts etc.
+//styles
 
 export const App = () => {
+  const [cityData, setCityData] = useState({});
   return (
-    <div>
-      <button
-        onClick={() => {
-          console.log(getWeatherData("Koszalin"));
-        }}
-      >
-        click
-      </button>
-    </div>
+    <>
+      <Form setCityData={setCityData} />
+      <Info cityData={cityData} />
+    </>
   );
 };
