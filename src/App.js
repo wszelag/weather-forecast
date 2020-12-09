@@ -1,19 +1,13 @@
 import React, { useState } from "react";
 import { Form } from "./components/Form/Form";
-import { Info } from "./components/Info/Info";
-
-//todo
-//add form and first views
-//decode time
-//display data hourly & daily with charts etc.
-//styles
+import { InfoWrapper } from "./components/InfoWrapper/InfoWrapper";
 
 export const App = () => {
-  const [cityData, setCityData] = useState({});
+  const [cityData, setCityData] = useState({ empty: true });
   return (
     <>
       <Form setCityData={setCityData} />
-      <Info cityData={cityData} />
+      <InfoWrapper cityData={cityData} />
     </>
   );
 };

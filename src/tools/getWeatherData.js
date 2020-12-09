@@ -15,15 +15,21 @@ export const getWeatherData = (cityName, setCityData) => {
       cityData.lat = data.coord.lat;
       cityData.lon = data.coord.lon;
     })
+    .catch((err) => console.error(err))
     .then(() => {
       const detailsURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${cityData.lat}&lon=${cityData.lon}&units=metric&exclude=minutely&appid=${APIkey}`;
       fetch(detailsURL)
         .then((res) => res.json())
         .then((data) => {
-          cityData.current = data.current;
-          cityData.daily = data.daily;
-          cityData.hourly = data.hourly;
-          console.log(cityName);
+          if (data.cod === "400") {
+            console.error("ERROR");
+            cityData.error = "ENTER CORRECT CITY NAME";
+          } else {
+            cityData.current = data.current;
+            cityData.daily = data.daily;
+            cityData.hourly = data.hourly;
+            cityData.error = "";
+          }
           setCityData(() => cityData);
         });
     });
