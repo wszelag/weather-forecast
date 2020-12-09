@@ -3,7 +3,7 @@ import { theme } from "../../style/theme";
 
 export const FormWrapper = styled.section`
   width: 100%;
-  height: 100px;
+  height: 10%;
 `;
 
 export const FormContainer = styled.form`
