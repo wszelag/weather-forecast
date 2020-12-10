@@ -1,5 +1,5 @@
 import React from "react";
-import { ForecastWrapper } from "./Forecast.css";
+import { ForecastWrapper, Navigation } from "./Forecast.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Current } from "./Current/Current";
 import { Hourly } from "./Hourly/Hourly";
@@ -9,7 +9,7 @@ export const Forecast = ({ cityData }) => {
   return (
     <Router>
       <ForecastWrapper>
-        <nav>
+        <Navigation>
           <ul>
             <li>
               <Link to="/">Current</Link>
@@ -21,10 +21,10 @@ export const Forecast = ({ cityData }) => {
               <Link to="/hourly">Hourly</Link>
             </li>
           </ul>
-        </nav>
+        </Navigation>
         <Switch>
           <Route exact path="/">
-            <Current />
+            <Current data={cityData.current} />
           </Route>
           <Route path="/daily">
             <Daily />

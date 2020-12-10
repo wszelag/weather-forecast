@@ -9,7 +9,7 @@ export const theme = {
   fontSizes: {
     small: "10px",
     normal: "16px",
-    large: "24px",
+    large: "20px",
     xLarge: "36px"
   }
 };

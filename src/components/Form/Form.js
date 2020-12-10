@@ -25,14 +25,14 @@ export const Form = ({ setCityData }) => {
           placeholder="..."
           ref={register({ required: true })}
         />
-        {errors.cityName && (
-          <RequireMessage>
-            <FontAwesomeIcon icon={faTimes} />
-          </RequireMessage>
-        )}
         <SubmitInput type="submit">
           <FontAwesomeIcon icon={faSearch} />
         </SubmitInput>
+        {/* {errors.cityName && (
+          <RequireMessage>
+            <FontAwesomeIcon icon={faTimes} />
+          </RequireMessage>
+        )} */}
       </FormContainer>
     </FormWrapper>
   );

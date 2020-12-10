@@ -1,17 +1,20 @@
 import styled from "styled-components";
-import { theme } from "../../style/theme";
 
 export const FormWrapper = styled.section`
   width: 100%;
-  height: 10%;
+  height: 90px;
 `;
 
 export const FormContainer = styled.form`
+  width: 450px;
   margin: 20px auto;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   align-items: center;
+
+  border-bottom: 2px solid ${(props) => props.theme.palette.lightGray};
 `;
 
 export const TextInput = styled.input`
@@ -21,42 +24,40 @@ export const TextInput = styled.input`
 
   background: transparent;
   text-align: center;
-  color: ${(props) => theme.palette.blue};
-  font-size: ${(props) => theme.fontSizes.xLarge};
+  color: ${(props) => props.theme.palette.blue};
+  font-size: ${(props) => props.theme.fontSizes.xLarge};
   border: none;
-  border-bottom: 2px solid ${(props) => theme.palette.lightGray};
   outline: none;
   &:focus {
-    border-bottom-color: ${(props) => theme.palette.blue};
+    border-bottom-color: ${(props) => props.theme.palette.blue};
   }
 `;
 
 export const SubmitInput = styled.button`
-  width: 60px;
-  height: 40px;
-  margin-left: 20px;
-  padding: 10px;
+  width: 50px;
+  height: 30px;
+  margin: 10px 0;
+  padding: 3px;
 
+  text-align: center;
   background-color: transparent;
   outline: none;
-  // border: 2px solid ${(props) => theme.palette.goodGreen};
-  color: ${(props) => theme.palette.goodGreen};
+  color: ${(props) => props.theme.palette.blue};
   border-radius: 10px;
-  font-size: ${(props) => theme.fontSizes.normal};
+  font-size: ${(props) => props.theme.fontSizes.large};
   border: none;
   cursor: pointer;
   transition: 0.2s;
   &:hover {
-    background-color: ${(props) => theme.palette.goodGreen};
-    color: ${(props) => theme.palette.white};
+    color: ${(props) => props.theme.palette.goodGreen};
   }
 `;
 
 export const RequireMessage = styled.span`
   width: 60px;
   height: 40px;
-  margin-left: 20px;
   padding: 10px;
 
-  color: ${(props) => theme.palette.wrongRed};
+  text-align: center;
+  color: ${(props) => props.theme.palette.wrongRed};
 `;
