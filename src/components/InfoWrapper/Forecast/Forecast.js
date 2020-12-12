@@ -24,7 +24,7 @@ export const Forecast = ({ cityData }) => {
         </Navigation>
         <Switch>
           <Route exact path="/">
-            <Current data={cityData.current} />
+            <Current data={cityData} />
           </Route>
           <Route path="/daily">
             <Daily />

@@ -1,17 +1,27 @@
 import React from "react";
+import { decodeDate } from "../../../../tools/decodeDate";
+import { CurrentWeatherWrapper, H1 } from "./Current.css";
 
 export const Current = ({ data }) => {
+  const { name, country } = data;
   const {
     feels_like,
     humidity,
-    dt,
     pressure,
     sunrise,
-    sunse,
+    sunset,
     temp,
-    wind_speed
-  } = data;
-  const weatherName = data.weather[0].main;
-  const weatherIcon = data.weather[0].icon;
-  return <div>current</div>;
+    wind_speed,
+    dt
+  } = data.current;
+  const date = decodeDate(dt, "fullDate");
+  const weatherName = data.current.weather[0].main;
+  const weatherIcon = data.current.weather[0].icon;
+  return (
+    <CurrentWeatherWrapper>
+      <H1>
+        {name}, {country}, {date}
+      </H1>
+    </CurrentWeatherWrapper>
+  );
 };
