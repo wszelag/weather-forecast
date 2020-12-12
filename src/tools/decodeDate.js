@@ -1,7 +1,7 @@
 export const decodeDate = (time, mode) => {
+  let result = "";
   if (mode === "fullDate") {
     let date = new Date(time * 1000);
-    console.log(date);
     const year = date.getFullYear();
     const day = date.getDate();
     let month = date.getMonth();
@@ -45,7 +45,15 @@ export const decodeDate = (time, mode) => {
       default:
         month = undefined;
     }
-    const fullDate = `${day} ${month} ${year}`;
-    return fullDate;
+    result = `${day} ${month} ${year}`;
+  } else if (mode === "time") {
+    let date = new Date(time * 1000);
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    if (hours < 10) hours = `0${hours}`;
+    if (minutes < 10) minutes = `0${minutes}`;
+    result = `${hours}:${minutes}`;
   }
+
+  return result;
 };
