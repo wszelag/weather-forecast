@@ -4,11 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { decodeDate } from "../../../../tools/decodeDate";
 
-export const Header = ({ data }) => {
-  const name = data[0];
-  const country = data[1];
-  const date = decodeDate(data[2], "fullDate");
-  const isDay = data[3];
+export const Header = ({ name, country, dt, isDay }) => {
+  const date = decodeDate(dt, "fullDate");
   let icon = null;
 
   isDay ? (icon = faSun) : (icon = faMoon);

@@ -3,9 +3,7 @@ import { P, Span, IconContainer } from "./Current.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThermometerThreeQuarters } from "@fortawesome/free-solid-svg-icons";
 
-export const Temperature = ({ data }) => {
-  const temp = data[0];
-  const feels_like = data[1];
+export const Temperature = ({ temp, feels_like }) => {
   return (
     <P>
       <IconContainer>

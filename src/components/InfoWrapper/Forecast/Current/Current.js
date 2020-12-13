@@ -1,5 +1,9 @@
 import React from "react";
-import { CurrentWeatherWrapper } from "./Current.css";
+import {
+  CurrentWeatherWrapper,
+  GoogleMapContainer,
+  Wrapper
+} from "./Current.css";
 import { Header } from "./Header";
 import { WeatherDescription } from "./WeatherDescription";
 import { Temperature } from "./Temperature";
@@ -26,23 +30,18 @@ export const Current = ({ data }) => {
   let isDay = "";
   dt >= sunrise && dt <= sunset ? (isDay = true) : (isDay = false);
 
-  const headerData = [name, country, dt, isDay];
-  const weatherDescriptionData = [weatherName, weatherIcon];
-  const temperatureData = [temp, feels_like];
-  const windData = [wind_speed];
-  const humidityData = [humidity];
-  const pressureData = [pressure];
-  const sunData = [sunrise, sunset];
-
   return (
-    <CurrentWeatherWrapper>
-      <Header data={headerData} />
-      <WeatherDescription data={weatherDescriptionData} />
-      <Temperature data={temperatureData} />
-      <Wind data={windData} />
-      <Humidity data={humidityData} />
-      <Pressure data={pressureData} />
-      <Sun data={sunData} />
-    </CurrentWeatherWrapper>
+    <Wrapper>
+      <CurrentWeatherWrapper>
+        <Header name={name} country={country} dt={dt} isDay={isDay} />
+        <WeatherDescription name={weatherName} id={weatherIcon} />
+        <Temperature temp={temp} feels_like={feels_like} />
+        <Wind wind_speed={wind_speed} />
+        <Humidity humidity={humidity} />
+        <Pressure pressure={pressure} />
+        <Sun sunrise={sunrise} sunset={sunset} />
+      </CurrentWeatherWrapper>
+      <GoogleMapContainer>google maps will appear here!</GoogleMapContainer>
+    </Wrapper>
   );
 };

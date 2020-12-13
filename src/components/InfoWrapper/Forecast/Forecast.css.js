@@ -7,12 +7,13 @@ export const ForecastWrapper = styled.div`
 `;
 
 export const Navigation = styled.nav`
-  width: 100%;
+  width: 450px;
   height: 40px;
   display: flex;
+  margin: 0 auto;
 
   flex-direction: row;
-  justify-content: center;
+  justify-content: current;
   align-items: center;
   & ul {
     width: 100%;

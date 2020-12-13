@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun } from "@fortawesome/free-solid-svg-icons";
 import { decodeDate } from "../../../../tools/decodeDate";
 
-export const Sun = ({ data }) => {
-  const sunriseTime = decodeDate(data[0], "time");
-  const sunsetTime = decodeDate(data[1], "time");
+export const Sun = ({ sunrise, sunset }) => {
+  const sunriseTime = decodeDate(sunrise, "time");
+  const sunsetTime = decodeDate(sunset, "time");
   return (
     <P>
       <IconContainer>

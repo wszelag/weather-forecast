@@ -1,8 +1,20 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+  width: 100%;
+  height: calc(100% - 40px);
+  display: flex;
+  padding-top: 10px;
+`;
+
 export const CurrentWeatherWrapper = styled.section`
   width: 50%;
-  height: calc(100% - 40px);
+  height: 100%;
+`;
+
+export const GoogleMapContainer = styled.section`
+  width: 50%;
+  height: 100%;
 `;
 
 export const H1 = styled.h1`

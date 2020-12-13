@@ -2,17 +2,21 @@ import styled from "styled-components";
 
 export const FormWrapper = styled.section`
   width: 100%;
-  height: 90px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
 `;
 
 export const FormContainer = styled.form`
   width: 450px;
-  margin: 20px auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  align-items: center;
 
   border-bottom: 2px solid ${(props) => props.theme.palette.lightGray};
 `;
@@ -36,7 +40,6 @@ export const TextInput = styled.input`
 export const SubmitInput = styled.button`
   width: 50px;
   height: 30px;
-  margin: 10px 0;
   padding: 3px;
 
   text-align: center;
@@ -51,13 +54,4 @@ export const SubmitInput = styled.button`
   &:hover {
     color: ${(props) => props.theme.palette.goodGreen};
   }
-`;
-
-export const RequireMessage = styled.span`
-  width: 60px;
-  height: 40px;
-  padding: 10px;
-
-  text-align: center;
-  color: ${(props) => props.theme.palette.wrongRed};
 `;
