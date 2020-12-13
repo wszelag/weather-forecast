@@ -6,17 +6,22 @@ export const CurrentWeatherWrapper = styled.section`
 `;
 
 export const H1 = styled.h1`
-  display: block;
+  display: flex;
   min-height: 50px;
-  margin-left: 10px;
 `;
 
 export const P = styled.p`
   display: block;
   margin-left: 10px;
+  display: flex;
 `;
 
 export const Span = styled.span`
   color: ${(props) => props.color};
-  margin-left: 10px;
+`;
+
+export const IconContainer = styled.span`
+  display: block;
+  width: 30px;
+  text-align: center;
 `;

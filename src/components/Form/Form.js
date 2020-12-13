@@ -1,18 +1,12 @@
 import React from "react";
 import { getWeatherData } from "../../tools/getWeatherData";
 import { useForm } from "react-hook-form";
-import {
-  FormWrapper,
-  FormContainer,
-  TextInput,
-  SubmitInput,
-  RequireMessage
-} from "./Form.css";
+import { FormWrapper, FormContainer, TextInput, SubmitInput } from "./Form.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 export const Form = ({ setCityData }) => {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     getWeatherData(data.cityName, setCityData);
   };
@@ -28,11 +22,6 @@ export const Form = ({ setCityData }) => {
         <SubmitInput type="submit">
           <FontAwesomeIcon icon={faSearch} />
         </SubmitInput>
-        {/* {errors.cityName && (
-          <RequireMessage>
-            <FontAwesomeIcon icon={faTimes} />
-          </RequireMessage>
-        )} */}
       </FormContainer>
     </FormWrapper>
   );
