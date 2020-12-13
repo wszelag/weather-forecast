@@ -10,6 +10,6 @@ export const theme = {
     small: "10px",
     normal: "16px",
     large: "20px",
-    xLarge: "36px"
+    xLarge: "30px"
   }
 };

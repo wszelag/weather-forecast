@@ -25,16 +25,22 @@ export const Current = ({ data }) => {
     dt
   } = data.current;
   const weatherName = data.current.weather[0].main;
-  const weatherIcon = data.current.weather[0].icon;
+  const weatherDescription = data.current.weather[0].description;
 
   let isDay = "";
   dt >= sunrise && dt <= sunset ? (isDay = true) : (isDay = false);
 
   return (
     <Wrapper>
+      <Header
+        name={name}
+        country={country}
+        dt={dt}
+        isDay={isDay}
+        weatherName={weatherName}
+      />
       <CurrentWeatherWrapper>
-        <Header name={name} country={country} dt={dt} isDay={isDay} />
-        <WeatherDescription name={weatherName} id={weatherIcon} />
+        <WeatherDescription name={weatherDescription} />
         <Temperature temp={temp} feels_like={feels_like} />
         <Wind wind_speed={wind_speed} />
         <Humidity humidity={humidity} />

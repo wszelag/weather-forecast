@@ -1,20 +1,12 @@
 import React from "react";
-import { H1, IconContainer } from "./Current.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { H1 } from "./Current.css";
 import { decodeDate } from "../../../../tools/decodeDate";
+import Thunderstorm from "../../../../assets/Thunderstorm.jpg";
 
-export const Header = ({ name, country, dt, isDay }) => {
+export const Header = ({ name, country, dt, isDay, weatherName }) => {
   const date = decodeDate(dt, "fullDate");
-  let icon = null;
-
-  isDay ? (icon = faSun) : (icon = faMoon);
-
   return (
-    <H1>
-      <IconContainer>
-        <FontAwesomeIcon icon={icon} />
-      </IconContainer>
+    <H1 background={Thunderstorm}>
       {name}, {country}, {date}
     </H1>
   );
