@@ -1,11 +1,4 @@
 import styled from "styled-components";
-import Thunderstorm from "../../../../assets/Thunderstorm.jpg";
-import Drizzle from "../../../../assets/Drizzle.jpg";
-import Snow from "../../../../assets/Snow.jpg";
-import Rain from "../../../../assets/Rain.jpg";
-import Clear from "../../../../assets/Clear.jpg";
-import Atmosphere from "../../../../assets/Atmosphere.jpg";
-import Clouds from "../../../../assets/Clouds.jpg";
 
 export const Wrapper = styled.div`
   width: 100vw;
@@ -19,16 +12,30 @@ export const Wrapper = styled.div`
 export const H1 = styled.h1`
   height: 100px;
   width: 100%;
+  position: relative;
 
+  line-height: 100px;
   text-align: center;
+  color: ${(props) => props.fontColor};
   font-size: ${(props) => props.theme.fontSizes.xLarge};
-  // background-color: ${(props) => props.theme.palette.blue};
-  background-image: url(${Clear});
+  border-top: 4px solid ${(props) => props.theme.palette.lightGray};
+  border-bottom: 4px solid ${(props) => props.theme.palette.lightGray};
+  font-weight: normal;
+  overflow: hidden;
+`;
+
+export const HeaderBackground = styled.div`
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  background-image: url(${(props) => props.background});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding-top: 10px;
-  font-weight: normal;
 `;
 
 export const CurrentWeatherWrapper = styled.section`

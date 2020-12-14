@@ -32,13 +32,7 @@ export const Current = ({ data }) => {
 
   return (
     <Wrapper>
-      <Header
-        name={name}
-        country={country}
-        dt={dt}
-        isDay={isDay}
-        weatherName={weatherName}
-      />
+      <Header name={name} country={country} dt={dt} weatherName={weatherName} />
       <CurrentWeatherWrapper>
         <WeatherDescription name={weatherDescription} />
         <Temperature temp={temp} feels_like={feels_like} />
