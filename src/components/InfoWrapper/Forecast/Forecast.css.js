@@ -6,9 +6,38 @@ export const ForecastWrapper = styled.div`
   position: relative;
 `;
 
+export const H1 = styled.h1`
+  height: 100px;
+  width: 100%;
+  position: relative;
+
+  line-height: 100px;
+  text-align: center;
+  color: ${(props) => props.fontColor};
+  font-size: ${(props) => props.theme.fontSizes.xLarge};
+  border-top: 4px solid ${(props) => props.theme.palette.lightGray};
+  border-bottom: 4px solid ${(props) => props.theme.palette.lightGray};
+  font-weight: normal;
+  overflow: hidden;
+`;
+
+export const HeaderBackground = styled.div`
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  background-image: url(${(props) => props.background});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+`;
+
 export const Navigation = styled.nav`
   width: 450px;
-  height: 40px;
+  height: 80px;
   display: flex;
   margin: 0 auto;
 

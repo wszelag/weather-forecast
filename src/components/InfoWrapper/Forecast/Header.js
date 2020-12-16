@@ -1,18 +1,17 @@
 import React, { useRef, useEffect } from "react";
-import { H1, HeaderBackground } from "./Current.css";
-import { decodeDate } from "../../../../tools/decodeDate";
-import Thunderstorm from "../../../../assets/Thunderstorm.jpg";
-import Clear from "../../../../assets/Clear.jpg";
-import Drizzle from "../../../../assets/Drizzle.jpg";
-import Snow from "../../../../assets/Snow.jpg";
-import Rain from "../../../../assets/Rain.jpg";
-import Atmosphere from "../../../../assets/Atmosphere.jpg";
-import Clouds from "../../../../assets/Clouds.jpg";
-import Mist from "../../../../assets/Mist.jpg";
-import Sand from "../../../../assets/Sand.jpg";
+import { decodeDate } from "../../../tools/decodeDate";
+import Thunderstorm from "../../../assets/Thunderstorm.jpg";
+import Clear from "../../../assets/Clear.jpg";
+import Drizzle from "../../../assets/Drizzle.jpg";
+import Snow from "../../../assets/Snow.jpg";
+import Rain from "../../../assets/Rain.jpg";
+import Atmosphere from "../../../assets/Atmosphere.jpg";
+import Clouds from "../../../assets/Clouds.jpg";
+import Mist from "../../../assets/Mist.jpg";
+import Sand from "../../../assets/Sand.jpg";
 import gsap from "gsap";
+import { H1, HeaderBackground } from "./Forecast.css";
 
-//white- thunderstorm, drizzle, rain
 export const Header = ({ name, country, dt, weatherName }) => {
   const date = decodeDate(dt, "fullDate");
   const backgroundEl = useRef(null);
@@ -53,7 +52,7 @@ export const Header = ({ name, country, dt, weatherName }) => {
       break;
     case "Clouds":
       backgroundPicture = Clouds;
-      headerFontColor = "black";
+      headerFontColor = "white";
       break;
     default:
       backgroundPicture = Mist;
